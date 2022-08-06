@@ -1,0 +1,9 @@
+## How does an LED matrix work?
+
+LED matrices usually have no convenient interface such as SPI or I2C. The LED Matrix Raspberry Pi Bonnet used in this project also provides no abstraction from the underlying hardware. The Bonnet only provides power to the matrix, level shifters and overvoltage protection. (The level shifters are necessary since the Basys 3 I/O pins are 3.3V and the matrix requires 5V.)
+
+If the Bonnet is not providing any functionality, then what's going on? The FPGA must drive all signals to control the matrix. At any given moment in time, only two rows are displayed on the matrix. There is an upper row and a lower row. The FPGA starts with the upper row as the top row and the lower row as the 16th row from the top. The FPGA iterates through all rows until the upper row is row 16 and the lower row is row 32. Thanks to persistence of vision, all pixels appear lit up to the human eye if this happens fast enough.
+
+Pixel data is clocked into shift registers. There are two shift registers, one per row. The red, green and blue color bits for the pixels in the upper and lower rows are shifted into these registers each clock cycle. After all the pixel bits have been shifted in, the process is repeated with the next two rows. This happens until all rows have eventually been displayed. While switching rows, it is necessary to disable the matrix for a few cycles. Otherwise, the pixels from one row would bleed into the next row.
+
+Without pulse-width modulation (PWM), only eight colors are possible (2^3). The controller uses PWM to achieve an arbitrary number of colors. As you might imagine, all of this means the input clock must be running at a high frequency (several megahertz). This is why an FPGA is best suited to this application. A microcontroller would struggle to keep up--especially at a high frame rate.

@@ -1,0 +1,30 @@
+## IP output directory
+ip/output/*/
+
+## Log Files
+*.log
+*.jou
+*.rpt
+*.vdi
+
+## Xilinx Vivado ISE
+.Xil/
+.cache/
+fsm_encoding.os
+tab_*/
+webtalk.*
+vivado_pid*.str
+hs_err_pid*
+xelab.*
+xsim.*
+xvlog.*
+*.cache
+*.sim
+*.runs
+*.hw
+*.backup.*
+*.debug
+
+## Checkpoint files
+*.dcp
+
