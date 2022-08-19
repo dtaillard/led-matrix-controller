@@ -49,8 +49,8 @@ Connect jumper wires between the GPIO header on the LED Matrix Bonnet and the Ba
  * JC1 -> GPIO 4
  * JC3 -> GPIO 27
  * JC4 -> GPIO 22
- * JB9 -> GPIO 20
- * JB10 -> GPIO 26
+ * JC9 -> GPIO 20
+ * JC10 -> GPIO 26
 
 ## Display your Own Image
 
