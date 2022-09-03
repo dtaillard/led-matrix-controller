@@ -1,9 +1,9 @@
 set PROJECT_DIR  [lindex $argv 0]
 set PROJECT_NAME [lindex $argv 1]
 
-set SOURCE_PATHS [glob -nocomplain -- ./rtl/*.v]
+set SOURCE_PATHS [glob -nocomplain -- ./rtl/*.sv]
 set INCLUDE_PATHS [glob -nocomplain -- ./inc/*.mem]
-set TB_PATHS [glob -nocomplain -- ./tb/*.v]
+set TB_PATHS [glob -nocomplain -- ./tb/*.sv]
 set IP_PATHS [glob -nocomplain -- ./ip/*.xci]
 set CONSTR_PATHS [glob -nocomplain -- ./constraints/*.xdc]
 
