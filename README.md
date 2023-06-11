@@ -1,5 +1,7 @@
+![IMG_0804](https://github.com/dtaillard/led-matrix-controller/assets/11124191/3613221e-dd3d-480f-89fc-45499ced1efb)
+
 # LED Matrix Controller
- 
+
 LED matrix controller implementation for the Digilent Basys 3 FPGA board. This project uses the Adafruit LED Matrix Bonnet for Raspberry Pi. Using this controller, an arbitrary image may be displayed on an LED matrix.
 
 For more information on how the LED matrix controller works, please refer to [HOWITWORKS.md](HOWITWORKS.md).
